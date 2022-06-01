@@ -1,0 +1,103 @@
+.wrapper {
+  text-align: center;
+  padding-top: 50px;
+}
+.button {
+  position: absolute;
+  margin-top: 30px;
+
+  right: 47%;
+}
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+
+.register-form {
+  //margin-top: 50px;
+}
+.container1 {
+  width: 100%;
+
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  //background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.input {
+  margin-left: 50px;
+}
+.p-button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-form {
+  text-align: center;
+  padding-left: 100px;
+}
+
+label {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+}
+ .p-dialog-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  width: 100% !important;
+}
+
+span{
+  width: 100% !important;
+}
+
+
+

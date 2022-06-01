@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="card">
+    <h3 class="text-center">Users List</h3>
+    <div class="card-body">
+
+
+      <table class="table table-striped">
+        <thead>
+        <th> ID</th>
+        <th> MASV</th>
+        <th> Ho dem</th>
+        <th> Ten</th>
+<!--        <th> Ngay sinh</th>-->
+        <th> Gioi tinh</th>
+        <th> Tinh</th>
+        <th> Ma lop</th>
+        <th> Thay doi</th>
+        <th> Xoa</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users; index as i" >
+          <td> {{i+1}} </td>
+          <td> {{ user.maSv}}</td>
+          <td> {{ user.hoDem}}</td>
+          <td> {{ user.name}}</td>
+<!--          <td> {{ user.ngaySinh}}</td>-->
+          <td> {{ user.gioiTinh}}</td>
+          <td> {{ user.tinh}}</td>
+          <td> {{ user.maLop}}</td>
+          <td><i class = "fa fa-cog" (click)="modifyModalDialog(user)" style = "font-size: 30px;color: black"></i></td>
+          <td><i class = "fa fa-trash" (click) = "deleteDialog(user)" style = "font-size: 30px;color: red"></i> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <p-button (click)="showModalDialog()" label="Dang ky" ></p-button>
+    <p-dialog header="Register" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+              [draggable]="false" [resizable]="false" >
+      <div class="form-group-body">
+        <form action="register-form" ngModel="selectedUser" class = "register-form" #userForm = "ngForm">
+          <div class="container1">
+            <hr>
+            <div class="p-field">
+              <label>MSSV</label>
+              <input type="text" placeholder="Nhap ma so sinh vien" name="mssv" [(ngModel)]="selectedUser.maSv" [value]="selectedUser.maSv" id="mssv" required >
+
+            </div>
+            <label>Ho dem</label>
+            <input type="text"  placeholder="Nhap ho va ten dem" name="hoDem"  [(ngModel)]="selectedUser.hoDem" [value]="selectedUser.hoDem" id="hoDem" required>
+
+            <label>Ten</label>
+            <input type="text"  placeholder="Nhap ten" name="name" id="name"  [(ngModel)]="selectedUser.name" [value]="selectedUser.name" required>
+
+            <label>Gioi tinh</label>
+            <input type="text"  placeholder="Nhap gioi tinh" name="gioiTinh"  [(ngModel)]="selectedUser.gioiTinh" [value]="selectedUser.gioiTinh" id="gioiTinh" required>
+
+            <label>Tinh</label>
+            <input type="text"  placeholder="Nhap tinh" name="tinh"  [(ngModel)]="selectedUser.tinh" id="tinh" [value]="selectedUser.tinh" required>
+
+            <label>Ma lop</label>
+            <input type="text"  placeholder="Nhap ma lop" name="maLop"  [(ngModel)]="selectedUser.maLop" id="maLop" [value]="selectedUser.maLop" required>
+            <p-button type="submit"  (click)="submitData(userForm)" label="Dang ky" class="p-button-text" [disabled]="!userForm.form.valid"></p-button>
+            <hr>
+          </div>
+        </form>
+      </div>
+
+    </p-dialog>
+
+  </div>
+
+</div>
